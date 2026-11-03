@@ -30,6 +30,7 @@ public class TorpedoStore {
   }
 
   public boolean fire(int numberOfTorpedos){
+    // Reject invalid requests before firing so the remaining stock is unchanged.
     if(numberOfTorpedos < 1 || numberOfTorpedos > this.torpedoCount){
       throw new IllegalArgumentException("numberOfTorpedos");
     }
